@@ -1,5 +1,5 @@
 import type { TypedResponse } from "@remix-run/node";
-import { useMutation, useQuery } from "react-query";
+
 import type {
   ApiRequest,
   InferRequest,
@@ -7,7 +7,7 @@ import type {
   InferUrl,
 } from "../types";
 
-const fetcher = async <
+export const fetchAction = async <
   T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
 >(
   url: InferUrl<T>,
@@ -27,26 +27,3 @@ const fetcher = async <
 
   return body;
 };
-
-const useApiQuery = <
-  T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
->(
-  url: InferUrl<T>,
-  request: InferRequest<T>
-) => {
-  return useQuery([url, request], () => {
-    return fetcher<T>(url, request);
-  });
-};
-
-const useApiMutation = <
-  T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
->(
-  url: InferUrl<T>
-) => {
-  return useMutation((request: InferRequest<T>) => {
-    return fetcher(url, request);
-  });
-};
-
-export { useApiQuery as useQuery, useApiMutation as useMutation, fetcher };

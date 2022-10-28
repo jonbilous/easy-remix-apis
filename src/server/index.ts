@@ -1,4 +1,4 @@
-import type { TypedResponse } from "@remix-run/node";
+import type { DataFunctionArgs, TypedResponse } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import zod from "zod";
 import type {
@@ -38,30 +38,30 @@ export const createHandler = <
     }
   };
 
-  const buildContext = async (ctx: HandlerContext) => {
+  const buildContext = async (remixContext: DataFunctionArgs) => {
     const contextResult = {} as Record<keyof Ctx, any>;
 
     await Promise.all(
       Object.entries(ctx || {}).map(async ([key, fn]) => {
-        const result = await fn(ctx);
+        const result = await fn(remixContext);
 
         contextResult[key as keyof Ctx] = result;
       })
     );
 
-    return { ...ctx, ...contextResult };
+    return { ...remixContext, ...contextResult };
   };
 
   const getResult = async (
-    ctx: HandlerContext,
+    remixContent: HandlerContext,
     fn: (
       data: RequestBody,
       ctx: HandlerContext<ContextResult<Ctx>>
     ) => Promise<ResponseType>
   ) => {
-    const validatedData = validate(await ctx.request.json());
+    const validatedData = validate(await remixContent.request.json());
 
-    const handlerCtx = await buildContext(ctx);
+    const handlerCtx = await buildContext(remixContent);
 
     return fn(validatedData, handlerCtx);
   };
