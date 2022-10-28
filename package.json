@@ -1,0 +1,79 @@
+{
+  "name": "@jonbilous/easy-remix-apis",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "vitest",
+    "test:ci": "vitest run --passWithNoTests",
+    "build": "tsc",
+    "commit": "can-i-commit check && cz",
+    "prepare": "husky install",
+    "pre-commit": "npm run test:ci && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonbilous/easy-remix-apis"
+  },
+  "author": "Jon Bilous",
+  "license": "ISC",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.1",
+    "can-i-commit": "^1.0.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-conventionalcommits": "^4.6.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4",
+    "node-mocks-http": "^1.11.0",
+    "semantic-release": "^19.0.2",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.5",
+    "vitest": "^0.9.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "release": {
+    "preset": "angular",
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md",
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "peerDependencies": {
+    "@remix-run/node": "^1.6.8",
+    "react-query": "^3.36.0",
+    "zod": "^3.14.4"
+  }
+}
