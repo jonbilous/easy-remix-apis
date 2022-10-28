@@ -72,8 +72,8 @@
     }
   },
   "peerDependencies": {
-    "@remix-run/node": "^1.6.8",
-    "react-query": "^3.36.0",
+    "@remix-run/node": "*",
+    "react-query": "*",
     "zod": "^3.14.4"
   }
 }
