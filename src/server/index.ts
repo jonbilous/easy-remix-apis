@@ -67,9 +67,9 @@ export const createHandler = <
   };
 
   const handler = async (
-    ctx: ApiRequest<RequestBody, Url>
+    remixContent: ApiRequest<RequestBody, Url>
   ): Promise<TypedResponse<ResponseType>> => {
-    const { request } = ctx;
+    const { request } = remixContent;
 
     if (request.method !== "POST") {
       return json(
@@ -80,7 +80,7 @@ export const createHandler = <
       );
     }
 
-    return getResult(ctx, fn)
+    return getResult(remixContent, fn)
       .then((result) => {
         return json(result);
       })

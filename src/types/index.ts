@@ -28,7 +28,7 @@ export type ContextResult<Ctx> = {
 
 export interface ApiRequest<T = any, E = any> extends DataFunctionArgs {
   request: Request & { json: () => Promise<T> };
-  endpoint: E;
+  endpoint?: E;
 }
 
 export type InferSchema<T extends Schema> = zod.infer<T>;
