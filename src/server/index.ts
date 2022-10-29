@@ -6,9 +6,6 @@ import type {
   ContextResult,
   HandlerContext,
   HandlerDefinition,
-  InferRequest,
-  InferResponse,
-  InferUrl,
 } from "../types";
 
 export class HTTPError extends Error {
@@ -69,17 +66,6 @@ export const createHandler = <
   const handler = async (
     remixContent: ApiRequest<RequestBody, Url>
   ): Promise<TypedResponse<ResponseType>> => {
-    const { request } = remixContent;
-
-    if (request.method !== "POST") {
-      return json(
-        { error: "Must use POST" },
-        {
-          status: 400,
-        }
-      );
-    }
-
     return getResult(remixContent, fn)
       .then((result) => {
         return json(result);
@@ -104,6 +90,8 @@ export const createHandler = <
   return handler;
 };
 
+/*
+
 const handler = createHandler({
   url: "/text",
   async fn(data, ctx) {
@@ -119,3 +107,5 @@ type Response = InferResponse<Handler>;
 type Url = InferUrl<Handler>;
 
 type Request = InferRequest<Handler>;
+
+*/
