@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.1.1...v1.2.0) (2022-10-28)
+
+
+### Features
+
+* :fire: remove react query and fix context ([c4bbc37](https://github.com/jonbilous/easy-remix-apis/commit/c4bbc374eea84e38868666fe8b304e2d3b390719))
+
 ## [1.1.1](https://github.com/jonbilous/easy-remix-apis/compare/v1.1.0...v1.1.1) (2022-10-28)
 
 
