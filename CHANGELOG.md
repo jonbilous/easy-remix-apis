@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.3.0...v1.4.0) (2023-01-11)
+
+
+### Features
+
+* fix types for latest remix ([40ecc86](https://github.com/jonbilous/easy-remix-apis/commit/40ecc86af3e3d7ab4bd75de1bc114d926c662e67))
+
 # [1.3.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.2.0...v1.3.0) (2022-10-29)
 
 
