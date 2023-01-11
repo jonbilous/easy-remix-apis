@@ -68,14 +68,16 @@ export const createHandler = <
   ): Promise<TypedResponse<ResponseType>> => {
     return getResult(remixContent, fn)
       .then((result) => {
-        return json(result);
+        const res = json<ResponseType>(result);
+
+        return res;
       })
       .catch((err) => {
         if (err instanceof HTTPError) {
           const message = err.message;
           const code = err.status;
 
-          return json(
+          throw json(
             { error: message },
             {
               status: code,
@@ -89,23 +91,3 @@ export const createHandler = <
 
   return handler;
 };
-
-/*
-
-const handler = createHandler({
-  url: "/text",
-  async fn(data, ctx) {
-    return new Date();
-  },
-  schema: zod.object({ hello: zod.string() }),
-});
-
-type Handler = typeof handler;
-
-type Response = InferResponse<Handler>;
-
-type Url = InferUrl<Handler>;
-
-type Request = InferRequest<Handler>;
-
-*/

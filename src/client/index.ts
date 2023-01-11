@@ -1,4 +1,8 @@
-import type { TypedResponse } from "@remix-run/node";
+import type { TypedResponse as RemixTypedResponse } from "@remix-run/node";
+
+type TypedResponse<ResponseType> = Awaited<
+  ReturnType<RemixTypedResponse<ResponseType>["json"]>
+>;
 
 import type {
   ApiRequest,
