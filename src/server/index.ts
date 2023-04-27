@@ -73,6 +73,8 @@ export const createHandler = <
         return res;
       })
       .catch((err) => {
+        console.error("error in api route", url, err);
+
         if (err instanceof HTTPError) {
           const message = err.message;
           const code = err.status;
@@ -83,9 +85,9 @@ export const createHandler = <
               status: code,
             }
           );
+        } else {
+          throw err;
         }
-
-        throw err;
       });
   };
 
