@@ -4,6 +4,7 @@ type TypedResponse<ResponseType> = Awaited<
   ReturnType<RemixTypedResponse<ResponseType>["json"]>
 >;
 
+import { useState } from "react";
 import type {
   ApiRequest,
   InferRequest,
@@ -11,7 +12,7 @@ import type {
   InferUrl,
 } from "../types";
 
-export const fetchAction = async <
+export const action = async <
   T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
 >(
   url: InferUrl<T>,
@@ -30,4 +31,37 @@ export const fetchAction = async <
   }
 
   return body;
+};
+
+export const useAction = <
+  T extends (ctx: ApiRequest<any, any>) => Promise<Awaited<ReturnType<T>>>
+>(
+  url: InferUrl<T>
+) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [request, setRequest] = useState<InferRequest<T> | null>(null);
+
+  const [response, setResponse] = useState<InferResponse<T> | null>(null);
+
+  const fn = async (request: InferRequest<T>) => {
+    setIsLoading(true);
+
+    setRequest(request);
+
+    return action<T>(url, request)
+      .then((res) => {
+        setResponse(res);
+        return res;
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  fn.isLoading = isLoading;
+  fn.request = request;
+  fn.response = response;
+
+  return fn;
 };
