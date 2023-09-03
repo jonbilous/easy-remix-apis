@@ -73,6 +73,7 @@
   },
   "peerDependencies": {
     "@remix-run/node": "*",
+    "@remix-run/react": "*",
     "zod": "^3.14.4",
     "react": "*",
     "@types/react": "*"
