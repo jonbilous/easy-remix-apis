@@ -51,12 +51,14 @@ export const useAction = <
 
   const [response, setResponse] = useState<InferResponse<T> | null>(null);
 
+  const [error, setError] = useState<string | null>(null);
+
   const { revalidate } = useRevalidator();
 
   const fn = async (request: InferRequest<T>) => {
     setIsLoading(true);
-
     setRequest(request);
+    setError(null);
 
     return action<T>(url, request)
       .then((res) => {
@@ -68,6 +70,10 @@ export const useAction = <
 
         return res;
       })
+      .catch((err: Error) => {
+        setError(err.message);
+        throw err;
+      })
       .finally(() => {
         setIsLoading(false);
       });
@@ -76,6 +82,7 @@ export const useAction = <
   fn.isLoading = isLoading;
   fn.request = request;
   fn.response = response;
+  fn.error = error;
 
   return fn;
 };
