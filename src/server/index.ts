@@ -72,7 +72,7 @@ export const createHandler = <
 
         return res;
       })
-      .catch((err) => {
+      .catch((err: Error | HTTPError) => {
         console.error("error in api route", url, err);
 
         if (err instanceof HTTPError) {
@@ -87,7 +87,7 @@ export const createHandler = <
           );
         } else {
           throw json(
-            { error: err },
+            { error: String(err) },
             {
               status: 500,
             }
