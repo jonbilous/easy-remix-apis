@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.9.0...v1.10.0) (2023-10-17)
+
+
+### Features
+
+* stringify error ([97d00f0](https://github.com/jonbilous/easy-remix-apis/commit/97d00f092c8fe979f134249e5d9c6542e09fbc89))
+
 # [1.9.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.8.0...v1.9.0) (2023-10-17)
 
 
