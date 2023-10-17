@@ -86,7 +86,12 @@ export const createHandler = <
             }
           );
         } else {
-          throw err;
+          throw json(
+            { error: err },
+            {
+              status: 500,
+            }
+          );
         }
       });
   };

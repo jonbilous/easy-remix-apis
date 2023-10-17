@@ -33,7 +33,7 @@ export const action = async <
   const body: InferResponse<T> = await response.json();
 
   if (response.status !== 200) {
-    throw new Error(String(body));
+    throw new Error(JSON.stringify(body));
   }
 
   return body;
