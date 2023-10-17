@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.7.0...v1.8.0) (2023-10-17)
+
+
+### Features
+
+* error state in useAction hook ([cba46f5](https://github.com/jonbilous/easy-remix-apis/commit/cba46f589318c9b26657f63cc0b0c4af003969f0))
+
 # [1.7.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.6.0...v1.7.0) (2023-09-03)
 
 
