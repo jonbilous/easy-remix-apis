@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.6.0...v1.7.0) (2023-09-03)
+
+
+### Features
+
+* revalidation option ([4a589bb](https://github.com/jonbilous/easy-remix-apis/commit/4a589bbb72e4c0da9d3920dbd52163a4f286d87e))
+
 # [1.6.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.5.0...v1.6.0) (2023-08-09)
 
 
