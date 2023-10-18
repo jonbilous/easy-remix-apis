@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.0...v1.10.1) (2023-10-18)
+
+
+### Bug Fixes
+
+* response type ([9bbf16a](https://github.com/jonbilous/easy-remix-apis/commit/9bbf16a54a3afd93530fd1f878b8252963fb68bb))
+
 # [1.10.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.9.0...v1.10.0) (2023-10-17)
 
 
