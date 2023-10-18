@@ -1,4 +1,8 @@
-import { DataFunctionArgs, TypedResponse } from "@remix-run/node";
+import {
+  DataFunctionArgs,
+  SerializeFrom,
+  TypedResponse,
+} from "@remix-run/node";
 import zod, { Schema, ZodSchema } from "zod";
 
 export type GetFirstArgument<T> = T extends (
@@ -39,7 +43,9 @@ export type InferRequest<
 
 export type InferResponse<
   T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
-> = Awaited<ReturnType<T>> extends TypedResponse<infer T> ? T : never;
+> = Awaited<ReturnType<T>> extends TypedResponse<infer T>
+  ? SerializeFrom<T>
+  : never;
 
 export type InferUrl<
   T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
