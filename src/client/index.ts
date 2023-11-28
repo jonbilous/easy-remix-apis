@@ -22,11 +22,13 @@ export const action = async <
   T extends (ctx: ApiRequest) => Promise<TypedResponse<ReturnType<T>>>
 >(
   url: InferUrl<T>,
-  request: InferRequest<T>
+  request: InferRequest<T>,
+  options?: Pick<RequestInit, "signal">
 ): Promise<InferResponse<T>> => {
   const response = await fetch(String(url), {
     body: JSON.stringify(request),
     method: "POST",
+    signal: options?.signal,
     headers: { "Content-Type": "application/json" },
   });
 
