@@ -1,6 +1,6 @@
 {
   "name": "@jonbilous/easy-remix-apis",
-  "version": "1.11.2",
+  "version": "1.11.0",
   "description": "",
   "main": "./index.js",
   "types": "./index.d.ts",

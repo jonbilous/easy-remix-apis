@@ -13,6 +13,18 @@ All notable changes to this project will be documented in this file. See
 # [1.11.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.1...v1.11.0) (2023-11-28)
 
 
+### Bug Fixes
+
+* version ([6837503](https://github.com/jonbilous/easy-remix-apis/commit/6837503982039c790ce3b8e7a9ca9148054a96c4))
+
+
+### Features
+
+* accept signal for aborting request ([0b8a64b](https://github.com/jonbilous/easy-remix-apis/commit/0b8a64bbe688c8f7f5ac1019830bbd723d9671d7))
+
+# [1.11.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.1...v1.11.0) (2024-04-22)
+
+
 ### Features
 
 * accept signal for aborting request ([0b8a64b](https://github.com/jonbilous/easy-remix-apis/commit/0b8a64bbe688c8f7f5ac1019830bbd723d9671d7))
