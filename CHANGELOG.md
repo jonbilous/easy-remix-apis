@@ -3,7 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.11.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.1...v1.11.0) (2024-04-22)
+## [1.11.1](https://github.com/jonbilous/easy-remix-apis/compare/v1.11.0...v1.11.1) (2024-04-22)
+
+
+### Bug Fixes
+
+* **types:** fix types when using zod.preprocess ([c04a77a](https://github.com/jonbilous/easy-remix-apis/commit/c04a77a9a8a6d1c0ecd3f31693e79b14c6031cc0))
+
+# [1.11.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.1...v1.11.0) (2023-11-28)
 
 
 ### Features
