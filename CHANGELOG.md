@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file. See
 
 ### Bug Fixes
 
+* deleted tags ([4961a18](https://github.com/jonbilous/easy-remix-apis/commit/4961a1827c184789a8b82f271fd3cdab8da0262c))
+* roll back ([afb8d8e](https://github.com/jonbilous/easy-remix-apis/commit/afb8d8e9eea9c2a7957258d490a23772c6f02880))
+* version ([6837503](https://github.com/jonbilous/easy-remix-apis/commit/6837503982039c790ce3b8e7a9ca9148054a96c4))
+
+
+### Features
+
+* accept signal for aborting request ([0b8a64b](https://github.com/jonbilous/easy-remix-apis/commit/0b8a64bbe688c8f7f5ac1019830bbd723d9671d7))
+* bump ([0a2c88a](https://github.com/jonbilous/easy-remix-apis/commit/0a2c88ae3bc8cf3789d1708c29c9d8de2509427e))
+
+# [1.11.0](https://github.com/jonbilous/easy-remix-apis/compare/v1.10.1...v1.11.0) (2024-04-22)
+
+
+### Bug Fixes
+
 * roll back ([afb8d8e](https://github.com/jonbilous/easy-remix-apis/commit/afb8d8e9eea9c2a7957258d490a23772c6f02880))
 * version ([6837503](https://github.com/jonbilous/easy-remix-apis/commit/6837503982039c790ce3b8e7a9ca9148054a96c4))
 
